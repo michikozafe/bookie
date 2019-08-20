@@ -1,5 +1,5 @@
 <?php 
-  require_once "connection.php";
+  require_once "./connection.php";
 
   if( $_POST["title"] == "" || $_POST["isbn"] == "" || $_POST["author"] == "" || $_POST["genre"] == "" || $_POST["year"] == "" ) {
     $_SESSION["message"] = "Please Complete The Form";

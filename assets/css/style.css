@@ -60,18 +60,19 @@ nav {
 }
 
 .list ul li {
-  padding: 20px 25px;
+  padding: 20px 15px;
 }
 
-.sort-container {
+.sort-container, .filter-container {
   position: relative;
 }
 
-.sort-container:hover .sort-content {
+.sort-container:hover .sort-content,
+.filter-container:hover .filter-content {
   display: block;
 }
 
-.sort-content {
+.sort-content, .filter-content {
   position: absolute;
   top: 54px;
   left: 5px;
@@ -82,11 +83,13 @@ nav {
   z-index: 1;
 }
 
-.sort-content a {
+.sort-content a,
+.filter-content a {
   padding: 10px 25px;
   display: block;
 }
-.sort-content a:hover {
+.sort-content a:hover,
+.filter-content a:hover {
   background-color: var(--secondary-color);
   color: var(--primary-color);
   display: block;
