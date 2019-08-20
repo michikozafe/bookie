@@ -208,7 +208,7 @@ nav {
   margin-bottom: 10px;
 }
 
-#addBookBtn, #editBookBtn {
+#addBookBtn, #editBookBtn, #deleteBookBtn {
   border: 1px solid var(--secondary-color);
   background-color: transparent;
   width: 100%;
@@ -219,7 +219,14 @@ nav {
   cursor: pointer;
 }
 
-#addBookBtn:hover, #editBookBtn:hover {
+#addBookBtn:hover, #editBookBtn:hover, #deleteBookBtn:hover {
   background-color: var(--secondary-color);
   color: white;
+}
+
+.confirmText {
+  margin: 2rem;
+  text-align: center;
+  font-size: 35px;
+  margin-top: 5.5rem;
 }

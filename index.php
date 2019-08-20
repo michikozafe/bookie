@@ -97,10 +97,12 @@ require_once "./controllers/connection.php";
       <p>ISBN: <?php echo $book["isbn"]; ?></p>
       <p>Genre: <?php echo $book["genre"]; ?></p>
       <div>
-        <a href="#" id="edit<?php echo $book["id"]; ?>" onclick=openModal(<?php echo $book["genre"]; ?>)><i class="fas fa-pencil-alt"></i></a>
-        <a href="#"><i class="fas fa-trash"></i></a>
+        <a href="#" onclick=editModal(<?php echo $book["id"]; ?>)><i class="fas fa-pencil-alt"></i></a>
+        <a href="#" onclick=deleteModal(<?php echo $book["id"]; ?>)><i class="fas fa-trash"></i></a>
       </div>
     </div>
+    <?php include './modal/edit_modal.php';?>
+    <?php include './modal/delete_modal.php';?>
     <?php } ?>
   </div>
 
