@@ -230,3 +230,27 @@ nav {
   font-size: 35px;
   margin-top: 5.5rem;
 }
+
+/* Pagination */
+
+.pagination {
+  margin-top: 30px;
+}
+
+.pagination a {
+  padding: 5px 15px;
+  background-color: white;
+  height: 35px;
+  border: 1px solid var(--secondary-color);
+  cursor: pointer;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: var(--primary-color);
+  transition: background-color 0.3s;
+
+}
+
+.pagination a.active {
+  background-color: var(--primary-color);
+}

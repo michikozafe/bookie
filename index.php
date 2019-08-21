@@ -84,8 +84,25 @@ require_once "./controllers/connection.php";
     }
     if (isset($_SESSION["filter"])) {
       $bookListsQuery .= $_SESSION["filter"];
-      unset($_SESSION["filter"]); 
+      unset($_SESSION["filter"]);      
     }
+    $bookListsResult = mysqli_query($conn, $bookListsQuery);
+
+    // Pagination
+    $resultsPerPage = 2;
+    $totalNoOfBooks = mysqli_num_rows($bookListsResult);
+    $lastPage = ceil($totalNoOfBooks/$resultsPerPage);
+    if ($lastPage < 1) {
+      $lastPage = 1;
+    }
+    $page = isset($_GET["page"]) ? $_GET["page"] : 1;
+    if($page > $lastPage) {
+      $page = 1;
+    }
+    $offset = ($page -1) * $resultsPerPage;
+
+    $bookListsQuery .= " LIMIT " . $offset . "," . $resultsPerPage;
+    // echo $bookListsQuery;
     $bookListsResult = mysqli_query($conn, $bookListsQuery);
     while ($book = mysqli_fetch_array($bookListsResult)) {
       ?>
@@ -104,6 +121,24 @@ require_once "./controllers/connection.php";
     <?php include './modal/edit_modal.php';?>
     <?php include './modal/delete_modal.php';?>
     <?php } ?>
+
+    <?php
+    for ($i = 1; $i <= $lastPage; $i++) {
+      if($i == $page) {
+        echo "
+        <div class='pagination'>
+          <a class='active'>$i</a>
+        </div>
+        ";
+      } else {
+        echo "
+        <div class='pagination'>
+          <a href='./index.php?page=$i' class='page-numbers'>$i</a>
+        </div>
+        ";
+      }
+    }
+    ?>
   </div>
 
   <!-- Add Modal -->
