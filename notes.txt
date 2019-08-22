@@ -1,0 +1,6 @@
+RemoteMySQL
+Username: eEUvLnmVYN
+Database name: eEUvLnmVYN
+Password: 85Mzm9n2zi
+Server: remotemysql.com
+Port: 3306
