@@ -1,7 +1,10 @@
 // Alert Timeout
-setTimeout(() => {
-  document.querySelector('.msg').remove();
-}, 4000);
+let messageDiv = document.querySelector('.msg');
+if(messageDiv) {
+  setTimeout(() => {
+    messageDiv.remove();
+  }, 4000);
+}
 
 // Add Modal
 const addCloseBtn = document.querySelector('.addCloseBtn');

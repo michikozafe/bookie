@@ -136,7 +136,7 @@ nav {
   border: 1px solid var(--secondary-color);
   border-radius: 5px;
   box-shadow: 2px 3px rgba(0, 0, 0, 0.4);
-  width: 45%;
+  width: 25%;
   background-color: #ffebd3;
   transition: transform 0.3s;
 }
@@ -232,15 +232,23 @@ nav {
 }
 
 /* Pagination */
+.pagination-container {
+  display:flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 50px;
+  width: 100%;
+}
 
-.pagination {
-  margin-top: 30px;
+.pagination{
+  width: 40px;
 }
 
 .pagination a {
   padding: 5px 15px;
   background-color: white;
   height: 35px;
+  width: 40px;
   border: 1px solid var(--secondary-color);
   cursor: pointer;
 }
@@ -253,4 +261,8 @@ nav {
 
 .pagination a.active {
   background-color: var(--primary-color);
+}
+
+.no-books-found {
+  text-align: center;
 }

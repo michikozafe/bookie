@@ -22,12 +22,8 @@ require_once "./controllers/connection.php";
     include "./controllers/search.php";
     $bookListsResult = mysqli_query($conn, $bookListsQuery);
     // Pagination
-    $resultsPerPage = 2;
+    $resultsPerPage = 3;
     $totalNoOfBooks = mysqli_num_rows($bookListsResult);
-    // echo $totalNoOfBooks;
-    if($totalNoOfBooks < 1) {
-      echo "No Book Match Our Records!";
-    }
     $lastPage = ceil($totalNoOfBooks / $resultsPerPage);
     if ($lastPage < 1) {
       $lastPage = 1;
@@ -56,8 +52,16 @@ require_once "./controllers/connection.php";
       <?php include './inc/modal/edit_modal.php'; ?>
       <?php include './inc/modal/delete_modal.php'; ?>
     <?php endwhile; ?>
+  </div>
+  
+  <div class="pagination-container">
     <?php include './controllers/pagination_pages.php'; ?>
   </div>
+
+  <?php if(!$totalNoOfBooks): ?>
+    <h1 class="no-books-found">No Books Found!</h1>
+    <script>document.querySelector('.pagination-container').style.display = "none";</script>
+  <?php endif; ?>
 
   <?php include "./inc/modal/add_modal.php"; ?>
 
