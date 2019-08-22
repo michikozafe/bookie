@@ -1,6 +1,7 @@
 <!-- Nav -->
 <nav>
   <div class="logo nav-section">
+    <span><i class="fas fa-bars"></i></span>
     <h3><i class="fas fa-book"></i> BOOKIE</h3>
   </div>
   <div class="list nav-section">
