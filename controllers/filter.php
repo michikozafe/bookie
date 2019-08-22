@@ -1,10 +1,6 @@
 <?php
-require_once './connection.php';
-
-if(isset($_GET["genre"])){
-  $genre = $_GET["genre"];
-  $_SESSION["filter"] = " WHERE genre='$genre' ";
-
-  header("Location: " . $_SERVER["HTTP_REFERER"]);
+if(isset($_GET["filter"])){
+  $genre = $_GET["filter"];
+  $bookListsQuery .= " WHERE genre='$genre' ";
 }
 ?>
