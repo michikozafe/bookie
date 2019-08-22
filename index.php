@@ -38,10 +38,14 @@ require_once "./controllers/connection.php";
     $bookListsResult = mysqli_query($conn, $bookListsQuery);
     while ($book = mysqli_fetch_array($bookListsResult)) : ?>
       <div class="book-item">
+        <div class="img-container">
+          <img src="<?= $book['img'];?>">
+        </div>
         <h3>
           <?php echo $book["title"]; ?>
         </h3>
-        <p>by <?php echo $book["author"]; ?> in <?php echo $book["year"]; ?></p>
+        <p>by <?php echo $book["author"]; ?></p>
+        <p>published in <?php echo $book["year"]; ?></p>
         <p>ISBN: <?php echo $book["isbn"]; ?></p>
         <p>Genre: <?php echo $book["genre"]; ?></p>
         <div>
